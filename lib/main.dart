@@ -30,8 +30,8 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 // ============================================================================
 class AppConfig {
   // ===== SPOT: Supabase credentials =========================================
-  static const String supabaseUrl = 'https://kyeyreriaiydbnnyiobm.supabase.co';        // e.g. https://abcd.supabase.co
-  static const String supabaseAnonKey = 'sb_publishable_ktxYlImZtqLR4-FzlyZx3A_oTjX4h7v';
+  static const String supabaseUrl = 'YOUR_SUPABASE_URL';        // e.g. https://abcd.supabase.co
+  static const String supabaseAnonKey = 'YOUR_SUPABASE_ANON_KEY';
   // ==========================================================================
 
   /// True once real keys have been pasted above.
