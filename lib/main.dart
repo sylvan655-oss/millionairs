@@ -312,10 +312,9 @@ class AuthService {
   }) async {
     if (sb == null) {
       // Demo fallback — no backend yet.
-      Session
-        ..role = role
-        ..name = fullName.isEmpty ? 'You' : fullName
-        ..isDemo = true;
+      Session.role = role;
+      Session.name = fullName.isEmpty ? 'You' : fullName;
+      Session.isDemo = true;
       return null;
     }
     try {
@@ -329,10 +328,9 @@ class AuthService {
         // =========================
       );
       if (res.user == null) return 'Could not create the account.';
-      Session
-        ..role = role
-        ..name = fullName
-        ..isDemo = false;
+      Session.role = role;
+      Session.name = fullName;
+      Session.isDemo = false;
       return null;
     } on AuthException catch (e) {
       return e.message;
@@ -388,11 +386,10 @@ class AuthService {
 
   static Future<void> signOut() async {
     if (sb != null) await sb!.auth.signOut();
-    Session
-      ..role = 'tenant'
-      ..name = 'Guest'
-      ..isDemo = true
-      ..favorites.clear();
+    Session.role = 'tenant';
+    Session.name = 'Guest';
+    Session.isDemo = true;
+    Session.favorites.clear();
   }
 }
 
